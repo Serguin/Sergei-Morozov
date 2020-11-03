@@ -65,7 +65,7 @@ print("Your petrol consumpion is ",cons, " l/km.")
 consNorm=0.18
 #limit of payback for a ride
 payBackLimit=130
-#price of petrol (theoretical)
+#price of petrol (hipotetical)
 petrolPrice=0.969
 #how much did petrol cost to you
 paid=round(petrolPrice*petrol,2)
@@ -75,10 +75,9 @@ if consNorm*dist>=payBackLimit:
 else:
     payBack=consNorm*dist
 total=paid-payBack
-print("You paid ",paid, " euro for that ride.\nYour payback is ",payBack," euro.")
+print("You paid ",paid, " euro for that ride.\nYour payback is ",round(payBack,2)," euro.")
 if total<0:
     print("In total you gained ",round(abs(total),2)," euro.")
 else:
     print("In total you spent ",round(total,2)," euro.")
-    
     
