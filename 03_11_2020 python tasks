@@ -1,0 +1,84 @@
+#Task number 2, Morozov Sergei, 03.11.2020
+a=int(input("Enter a"))
+b=int(input("Enter b"))
+c=int(input("Enter c"))
+#Checking if triangle could exist, if not, the program will stop
+Per=a+b+c
+if a+b>c and a+c>b and b+c>a:
+    print("Perimeter is ",Per)
+else: print("This triangle is not real!!")
+
+#Task number 3, Sergei Morozov, 03.11.2020
+item1=round(float(input("Price of item 1")),2)
+item2=round(float(input("Price of item 2")),2)
+item3=round(float(input("Price of item 3")),2)
+dis=int(input("Enter discount in %"))
+if item1>0 and item2>0 and item3>0:
+    price=round((item1+item2+item3)*(1-dis/100),2)
+    print("Total: ",price,"$")
+else:
+    print("We don`t give anything for free!")
+    
+    #Task number 4, Morozov Sergei, 03.11.2020
+pizzaCost=round(float(input("Enter pizza cost\n")),2)
+friends=int(input("How many friends do you have?\n"))+1
+tip=int(input("How many cash do you give as a tip in %?\n"))
+if tip==0:
+    print("You are so greedy!")
+if friends==1:
+    print("Oh, so you are forever alone, what a pity. You do still owe me ", round(pizzaCost*(1+tip/100)),"$")
+elif friends>1:
+    print("Each of you owe me ",round((pizzaCost/friends)*(1+tip/100),2),"$")
+    
+    #Task number 5, Morozov Sergei, 03.11.2020
+speed=29.9
+dist=speed/60*24
+print("You will run ",int(round(dist,2)*1000)," meters in 24 minutes")
+
+#Task number 6, Morozov Sergei, 03.11.2020
+a=int(input("Enter a\n"))
+b=int(input("Enter b\n"))
+if a>0 and b>0:
+    c=round((a**2+b**2)**0.5,2)
+    print("C equals ",c)
+else:
+    print("This triangle does not exist")
+    
+    #Task number 7, Morozov Sergei, 03.11.2020
+time=int(input("Enter time in minutes\n"))
+hours=time//60
+mins=time%60
+print("It`s ",hours,":",mins)
+
+#Task number 8, Morozov Sergei, 03.11.2020
+a=int(input("Enter your decimal number\n"))
+b=bin(a)
+c=hex(a)
+print(b,"\n",c)
+
+#Task number 9 (enchanted), Morozov Sergei, 03.11.2020
+petrol=int(input("How much petrol did you fill in?\n"))
+dist=int(input("How many km did you drive?\n"))
+cons=round(petrol/(dist/100),2)
+print("Your petrol consumpion is ",cons, " l/km.")
+#normal cost of each km
+consNorm=0.18
+#limit of payback for a ride
+payBackLimit=130
+#price of petrol (theoretical)
+petrolPrice=0.969
+#how much did petrol cost to you
+paid=round(petrolPrice*petrol,2)
+#how much will you paid back
+if consNorm*dist>=payBackLimit:
+    payBack=130
+else:
+    payBack=consNorm*dist
+total=paid-payBack
+print("You paid ",paid, " euro for that ride.\nYour payback is ",payBack," euro.")
+if total<0:
+    print("In total you gained ",round(abs(total),2)," euro.")
+else:
+    print("In total you spent ",round(total,2)," euro.")
+    
+    
