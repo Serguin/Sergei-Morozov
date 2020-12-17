@@ -43,7 +43,7 @@ h2=Captain(2, random.randint(7, 10))
 game=True
 while game:
     team1=[] #team of captain 1 creation
-    for i in range(10):
+    for i in range(10): #football team consists of 11 players, and the captain is one of them
         team1.append(footbalPlayer(1,random.randint(1, 10)))
     team2=[] #team of captain 2 creation
     for i in range(10):
@@ -51,12 +51,13 @@ while game:
     
     teamSkill_1=h1.getSkill() #counting team skill, captains skill is always the same after captain craation
     for i in range (len(team1)): #but each player skill is different in every game (different players)
-        teamSkill_1+=team1[i].getSkill() #so we get each players skill and add it cumulatively to caps skill
+        teamSkill_1+=team1[i].getSkill() #so we get each players skill and add it cumulatively to captains skill
     
     teamSkill_2=h2.getSkill()
     for i in range (len(team2)):
         teamSkill_2+=team2[i].getSkill()
     print(teamSkill_1," and ", teamSkill_2)
+    #next fragment is skill comparison to define who won
     if teamSkill_1>teamSkill_2:
         h1.winUp()
         print("Captain 1 wins ", h1.getWins(), " times!")
@@ -64,11 +65,11 @@ while game:
         h2.winUp()
         print("Captain 2 wins ", h2.getWins(), " times!")
     else:
-        print("Draw!")
+        print("Draw!") #this code makes draw quite rare
     
-    if int(input("To continue enter 1, to exit enter any other number"))!=1:
+    if int(input("To continue enter 1, to exit enter any other number"))!=1: #just to stop the games
         game=False
-        print("Championship statistics!\nTeam 1 with captains skill level ",h1.getSkill()," won ",h1.getWins()," times!")
+        print("Championship statistics!\nTeam 1 with captains skill level ",h1.getSkill()," won ",h1.getWins()," times!") #championship results
         print("And team 2 with captains skill level ",h2.getSkill()," won ", h2.getWins(), " times!")
         #lets try to find a player and get his skill level and team
         #search starts after championship is ended, so we enter another loop for it
