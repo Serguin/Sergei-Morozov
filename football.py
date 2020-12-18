@@ -6,7 +6,7 @@ class Person:
     skill=0
     team=0 #team nubmer - переменная для команды
     def __init__(self,t,s):
-        global iD 
+        global iD #here we declare global thing,- а от тута всего лишь чел -мимке
         global footballSociety
         self.team=t #team selection - выбор команды при создании объекта
         self.id=iD #this objects id - причисление ИД-номера при создании объекта
